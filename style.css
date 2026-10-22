@@ -443,8 +443,10 @@ footer{
   margin-bottom:8px;
 }
 
+
 /* ========== MOBILE ========== */
-@media (min-width : 375px) {
+
+@media (max-width : 767px) {
     * {
         box-sizing: border-box;
     }
@@ -454,10 +456,8 @@ footer{
     }
     header {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 15px 20px;
         position: sticky;
         top: 0;
@@ -472,17 +472,17 @@ footer{
     header nav {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; 
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-start; 
         gap: 12px;
         width: 100%;
         padding: 10px 0 0;
     }
     header nav a {
         display: inline-block;
-        width: auto;
-        white-space: nowrap;
+        width: 100%;
+        font-size: 16px;
     }
     .menu-icon {
         display: none;
@@ -572,6 +572,8 @@ footer{
         align-items: stretch;
         width: 100%;
         gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .card-menu-item {
         width: 100%;
@@ -706,7 +708,7 @@ footer{
 
 /* ============ TABLET ============== */
 
- @media (min-width: 768px)  {
+ @media (min-width: 768px) and (max-width: 1279px) {
     * {
         box-sizing: border-box;
     }
@@ -724,18 +726,24 @@ footer{
     .logo {
         font-size: 25px;
     }
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 18px;
+      gap: 15px;
+    }
     header nav {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
         align-items: center;
         gap: 15px;
         width: 100%;
     }
-    /* header nav a {
-        white-space: nowrap;
-    } */
     .main {
         width: 100%;
         min-height: auto;
@@ -766,20 +774,18 @@ footer{
     }
     .cards {
         display: flex;
-        /* flex-direction: row; */
-        flex-wrap: wrap;
-        justify-content: space-between;
-        /* align-items: stretch; */
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center; 
         width: 100%;
         height: 100%;
         padding: 20px 0;
         gap: 20px;
     }
     .card {
-        width:50%;
+        width:70%;
         height: 100%;
-        margin: 0;
-        /* overflow: hidden; */
     }
     .card img {
         width: 100%;
@@ -840,15 +846,20 @@ footer{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: stretch;
         width: 100%;
         gap: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .card-menu-item {
-        width: calc(50% - 10px);
-        height: auto;
-        margin: 0;
-        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 40%;
+        height: 100%;
+        margin-left: 25px;
+        margin-right: 25px;
     }
     .card-menu-item img {
         width: 100%;
@@ -936,50 +947,54 @@ footer{
     }
     .footer-main {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
         width: 100%;
         height: 100%;
         padding: 35px 25px;
-        gap: 25px;
+        gap: 20px;
     }
-    .footer-col-1,
-    .footer-col-2 {
-        width: 50%;
-        height: 100%;
+    .footer-col-1{
+      width:100%;
+      height:100%;
+      margin: 10px;
+      text-align: left;
+    }
+    .footer-col-2{
+      width:45%;
+      height:100%;
+      text-align: left;
+      margin: 10px;
     }
     .footer-col-2 h3 {
         display: block;
         width: 100%;
         margin-bottom: 12px;
-    }
+    } 
     .footer-icon {
         display: block;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-start;
-        width: 100%;
+        width: 45%;
         height: 100%;
         gap: 15px;
         margin: 0;
         padding: 5px 0;
     }
     .footer-icon a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-block;
         margin: 0;
     }
 } 
 
 /* ========== Laptop ========== */
 
-/* @media (min-width: 1024px) {
-
-  .section{
+@media (min-width: 1280px) {
+.section{
   width:100%;
   padding:30px;
 }
@@ -1005,7 +1020,9 @@ header{
 }
 nav{
   display:flex;
-  gap:22px;
+  flex-direction: row;
+  align-items: flex-end;
+  gap:15px;
   flex-wrap:wrap;
   justify-content:center;
 }
@@ -1095,10 +1112,10 @@ a{
   padding:30px;
   display:flex;
   flex-wrap:wrap;
-  justify-content:space-evenly;
+  justify-content:space-between;
 }
 .card{
-  width:440px;
+  width:30%;
   height:450px;
   border-radius:15px;
   border-top-left-radius:15px;
@@ -1221,7 +1238,7 @@ a{
   justify-content:space-evenly;
 }
 .card-menu-item{
-  width:440px;
+  width:30%; 
   height:450px;
   border-radius:15px;
   border-top-left-radius:15px;
@@ -1364,9 +1381,9 @@ footer{
 }
 .footer-main{
   display:flex;
+  flex-direction: row; 
   width:100%;
   height:100%;
-  align-items:center;
   background-color:#351b27;
   color:#fff8f5;
   padding:50px;
@@ -1376,6 +1393,9 @@ footer{
   color:#ffc1d2;
 }
 .footer-col-1 p h3{
+  display:flex;
+  flex-direction:column; 
+  align-items:flex-start;
   height:100%;
   width:30%;
   padding:10px;
@@ -1386,6 +1406,9 @@ footer{
   margin-bottom:8px;
 }
 .footer-col-2 p h3{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
   height:100%;
   width:30%;
   padding:20px;
@@ -1404,4 +1427,4 @@ footer{
   font-family:Georgia;
   margin-bottom:8px;
 }
-}  */
+}
